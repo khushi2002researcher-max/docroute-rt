@@ -1,0 +1,89 @@
+/* =========================
+   AVATAR CARD ONLY
+========================= */
+
+.profile-avatar-card {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    20px 20px 60px rgba(90, 131, 193, 0.35),
+    -20px -20px 60px rgba(90, 131, 193, 0.15);
+
+  backdrop-filter: blur(14px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover polish */
+.profile-avatar-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    26px 26px 70px rgba(90, 131, 193, 0.45),
+    -26px -26px 70px rgba(90, 131, 193, 0.2);
+}
+
+/* Avatar image styling */
+.profile-avatar-card img {
+  border: 3px solid #5a83c1;
+  box-shadow: 0 8px 22px rgba(90, 131, 193, 0.5);
+}
+
+
+.update-btn {
+  --color: #5a83c1;
+
+  font-family: inherit;
+  display: inline-block;
+  width: 100%;
+  height: 2.8em;
+  line-height: 2.6em;
+
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  border: 2px solid var(--color);
+  background: transparent;
+
+  transition: color 0.5s;
+  z-index: 1;
+
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--color);
+}
+
+/* Bubble */
+.update-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s ease;
+}
+
+.update-btn:hover {
+  color: #5a83c1;
+}
+
+.update-btn:hover::before {
+  top: -40px;
+  left: -40px;
+}
+
+.update-btn:active::before {
+  background: #5a83c1;
+}
+
+.update-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,152 @@
+Chapter 10 
+Asymmetric-Key 
+Cryptography 
+10.1Copyright © The McGrawvHill Companies, Inc. Permission required for reproduction or display. Cryptography 
+
+Objectives 
+/boxshadowdwnPresent asymmetricVkey cryptography. 
+/boxshadowdwnDistinguish between symmetricVkey cryptography 
+and asymmetricVkey cryptography. 
+/boxshadowdwnIntroduce trapdoor oneVway functions and their 
+use in asymmetric Vkey cryptosystems Chapter 10 
+10.2use in asymmetric Vkey cryptosystems 
+/boxshadowdwnDiscuss the RSA cryptosystem 
+10 10V V1   1   INTRODUCTION INTRODUCTION 
+The advent of asymmetricVkey cryptography does not eliminate the need for symmetricVkey cryptography.Symmetric and asymmetricVkey cryptography will exist in parallel and continue to serve the community. We actually believe that they are complements of each other; the advantages of one can compensate for the disadvantages of 
+10.3Keys General Idea Asymmetric Cryptography Practices Symmetric Cryptography Versus Asymmetric Cryptography Trapdoor OneVWay Function Topics discussed in this section: Topics discussed in this section: advantages of one can compensate for the disadvantages of 
+the other.
+Asymmetric key cryptography, known as public key cryptography, uses two separate keys: one private and one public.10.1.1  Keys 
+Figure 10.1  Locking and unlocking in asymmetricVkey cryptosystem 
+10.4
+
+10.1.2  General Idea Figure 10.2  General idea of asymmetricVkey cryptosystem 
+10.5
+C = f (K public , P) P = g(K private , C) 
+Asymmetric Cryptography Practices 
+10.6
+
+Symmetric Cryptography Versus Asymmetric Cryptography 
+SymmetricVkey cryptography is based on sharing secrecy; asymmetricVkey cryptography is based on personal secrecy. NoteV1
+10.7In symmetricVkey cryptography system, the number of keys needed for each user is 1.In asymmetricVkey cryptography system, the number of keys needed for each user is 2.NoteV2
+Symmetric Cryptography Versus Asymmetric Cryptography 
+In symmetricVkey cryptography, symbols in plaintext and ciphertext are permuted or substituted. 
+In asymmetric Vkey cryptography,  plaintext and ciphertext 
+NoteV3
+10.8SymmetricVkey cryptography is appropriate for long messages, and the speed of encryption/decryption is fast. AsymmetricVkey cryptography is appropriate for short messages, and the speed of encryption/decryption is slow. NoteV4In asymmetric Vkey cryptography,  plaintext and ciphertext 
+are treated as integers. 
+The main idea behind asymmetric8key cryptography is the 
+concept of the trapdoor one8way function. 10.1.4 Trapdoor OneVWay Function 
+Functions 
+10.9Functions 
+Figure 10.3 A function as rule mapping a domain to a 
+
+Trapdoor One VWay Function (TOWF) 
+10.1.4  Continued 
+OneVWay Function (OWF) 1. f is easy to compute /barb2right/barb2right /barb2right/barb2righty=f(x) 
+2.    f    is difficult to compute /barb2right/barb2right /barb2right/barb2rightx=f  (y)  
+−181
+10.10 Trapdoor One VWay Function (TOWF) 
+3. Given y and a trapdoor, x can be computed easily. 
+10.1.4  Continued 
+Example 10. 1
+Example 10 . 2When nis large, n= p×qis a one8way function. Given pand q, 
+it is always easy to calculate n; given n, it is very difficult to 
+compute pand q. This is the factorization problem. 
+10.11 Example 10 . 2
+When nis large, the function y= xmod nis a trapdoor one8way 
+function. Given x, k, and n, it is easy to calculate y. Given y, k, 
+and n, it is very difficult to calculate x. This is the discrete 
+logarithm problem. However, if we know the trapdoor , k ′such 
+that k×k′= 1 mod Φ(n), we can use x = y   mod nto find x. 
+k
+k′
+10 10V V2   2   RSA CRYPTOSYSTEM RSA CRYPTOSYSTEM 
+The The most most common common public publicV Vkey key algorithm algorithm is is the the RSA RSA 
+cryptosystem, cryptosystem, named named for for its its inventors inventors (Rivest, (Rivest, 
+Shamir, Shamir, and and Adleman) Adleman). .
+Topics discussed in this section: Topics discussed in this section: 
+10.12 10.2.1 Introduction 
+10.2.2 Procedure 
+10.2.3 Some Trivial Examples 
+10.2.4 Attacks on RSA 
+10.2.5 Recommendations 
+Topics discussed in this section: Topics discussed in this section: 
+10.2.1  Introduction 
+Figure 10.5  Complexity of operations in RSA 
+10.13 
+
+10.2.2  Procedure 
+Figure 10.6  Encryption, decryption, and key generation in RSA 
+10.14 
+
+10.2.2  Continued 
+10.15 
+
+When Alice wants Bob to send her a message, she: 
+/boxshadowdwnSelects two (large) primes p, q, TOP SECRET ,
+/boxshadowdwnComputes n= pqand φ(n) = ( pv1)( qv1).  φ(n) is TOP SECRET .
+/boxshadowdwnSelects an integer e, 1 < e < φ(n), such that gcd( e, φ(n)) = 1, 
+/boxshadowdwnComputes d, such that d*e (mod φ(n))= 1,  dalso TOP SECRET ,
+10.2.2  Continued 
+/boxshadowdwnComputes d, such that d*e (mod φ(n))= 1,  dalso TOP SECRET ,
+/boxshadowdwnGives public key ( e, n) to Bob, and keeps her private key ( d, n).
+10.16 
+Encryption 10.2.2  Continued 
+10.17 
+If the plaintext Pis larger than n , then Phas to be encrypted letter by 
+letter.
+Decryption 10.2.2  Continued 
+10.18 
+
+10.2.3  Some Trivial Examples 
+Example 10. 5
+Bob chooses 7 and 11 as pand qand calculates n= 77. The value of 
+φ(n) = (7 − 1)(11 − 1) or 60. Now he chooses two exponents, eand d,
+from Z60 ∗. If he chooses eto be 13, then d is 37. Note that e×dmod 
+60 = 1 (they are inverses of each Now imagine that Alice wants to send the plaintext 5 to Bob. She uses the public exponent 13 to encrypt 5.
+10.19 
+Bob receives the ciphertext 26 and uses the private key 37 to decipher the ciphertext:
+
+10.2.2  Continued 
+Example 10. 5 (cont.) 
+Calculate 5 mod 77 :
+5 = 5 mod 77=55 = 25 mod 77=25 5 = 625 mod 77=95=390625 mod 77 =4
+13 
+1 2 4 8
+10.20 5=390625 mod 77 =4
+5= 5 *5 *5 = 180 mod 77 = 26 1 4 8
+13 
+10.2.3  Some Trivial Examples 
+Example 10. 6
+Now assume that another person, John, wants to send a message to 
+Bob. John can use the same public key announced by Bob (probably on his website), 13; John’s plaintext is 63. John calculates the following: 
+10.21 
+Bob receives the ciphertext 28 and uses his private key 37 to decipher the ciphertext: 
+10.2.3  Some Trivial Examples 
+Example 10. 7
+Jennifer creates a pair of keys for herself. She chooses p= 397 and q
+= 401. She calculates n= 159197. She then calculates φ(n) = 158400. 
+She then chooses e = 343 and d = 12007. Show how Ted can send a message to Jennifer if he knows eand n.
+10.22 Suppose Ted wants to send the message “NO” to Jennifer. He changes each character to a number (from 00 to 25), with each character coded as two digits. He then concatenates the two coded characters and gets a fourvdigit number. The plaintext is 1314. Figure 10.7 shows the process.
+10.2.3  Continued 
+Figure 10.7  Encryption and decryption in Example 10.7
+10.23 
+
+10.2.4  Attacks on RSA 
+Figure 10.8  Taxonomy of potential attacks on RSA 
+10.24 
+
+10.2.4  Continued 
+Factorization Attack 
+/boxshadowdwnThe security of RSA is based on the idea that the modulus is so large that is infeasible to factor it in reasonable time. 
+/boxshadowdwnEven though n is public, p & q are secret. If Eve can factor n 
+10.25 /boxshadowdwnEven though n is public, p & q are secret. If Eve can factor n 
+and get p & q, she can calculate Φ(n). Then she can calculate d=e mod Φ(n) because e is public. 
+Recommendations 
+/boxshadowdwnThe number of bits in n should be at least 1024.
+/boxshadowdwnTwo primes p & q must be 512 bit at least. 
+/boxshadowdwnp & q should not be close to each other. 
+/boxshadowdwnModulus n must not be shared. 
+10.26 /boxshadowdwnModulus n must not be shared. 
+/boxshadowdwnIf d is leaked, immediately change n, e and d. 
+/boxshadowdwnMessage must be padded by OAEP. 

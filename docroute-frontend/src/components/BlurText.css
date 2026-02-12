@@ -1,0 +1,23 @@
+/* ================= BLUR TEXT ================= */
+
+/* Each animated word / character */
+.blur-text-span {
+  display: inline-block;
+  will-change: transform, filter, opacity;
+  white-space: pre;
+}
+
+/* Parent paragraph alignment helper (optional) */
+.blur-text-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .blur-text-span {
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

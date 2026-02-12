@@ -1,0 +1,30 @@
+/* Glass hover card (safe with Bootstrap) */
+.glass-hover-card {
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+
+
+/* Primary action button override */
+.btn-theme {
+  background-color: #5a83c1 !important;
+  border-color: #5a83c1 !important;
+  color: #fff !important;
+}
+
+.btn-theme:hover {
+  background-color: #4a6fa5 !important;
+  border-color: #4a6fa5 !important;
+}
+
+.btn-theme:active,
+.btn-theme:focus {
+  background-color: #3f5f94 !important;
+  border-color: #3f5f94 !important;
+  box-shadow: 0 0 0 0.25rem rgba(90, 131, 193, 0.35) !important;
+}

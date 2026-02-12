@@ -1,0 +1,20 @@
+.dashboard-layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #1f2937;
+}
+
+.dashboard-content {
+  margin-left: 240px;   /* 🔥 THIS FIXES EVERYTHING */
+  padding: 24px;
+  width: calc(100% - 240px);
+  min-height: 100vh;
+  background: #f8fafc;
+}

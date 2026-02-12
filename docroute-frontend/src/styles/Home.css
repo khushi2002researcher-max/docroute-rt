@@ -1,0 +1,247 @@
+.hero-section {
+  min-height: 90vh;
+  background: radial-gradient(circle at top, #0ea4e9a8, #020617);
+  color: #ffffff;
+  padding: 80px 20px;
+}
+
+
+.get-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 28px;
+  font-weight: 600;
+}
+
+.get-btn .btn-text-two {
+  display: none;
+}
+
+.get-btn:hover .btn-text-one {
+  display: none;
+}
+
+.get-btn:hover .btn-text-two {
+  display: inline;
+}
+
+.section-title {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.project-desc {
+  max-width: 800px;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.feature-card {
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.steps-row .step-box {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.steps-row span {
+  font-size: 28px;
+}
+
+.tech-row {
+  font-weight: 600;
+  color: #333;
+}
+
+.footer {
+  background: #111827;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 20px;
+}
+
+
+/* HERO TYPING TITLE */
+.hero-title-type {
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffffff, #cce0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* HERO SUBTITLE */
+.hero-subtitle-type {
+  color: #e9eef6;
+  font-weight: 500;
+}
+
+/* Cursor styling */
+.text-type__cursor {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+.card-spotlight h4 {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.card-spotlight p {
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.hero-section {
+  min-height: 100vh;
+  background: #0b0f1a;
+}
+
+.hero-orb-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+
+/* Override react-bootstrap default button */
+.fancy-btn {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #725AC1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #725AC1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725AC1;
+  text-decoration: none;
+}
+
+/* Remove bootstrap focus / bg */
+.fancy-btn,
+.fancy-btn:hover,
+.fancy-btn:focus {
+  background-color: transparent !important;
+  border-color: #725AC1 !important;
+  box-shadow: none !important;
+}
+
+/* Hover fill animation */
+.fancy-btn:hover {
+  color: white !important;
+  box-shadow: inset 0 -100px 0 0 #725AC1;
+}
+
+/* Click animation */
+.fancy-btn:active {
+  transform: scale(0.9);
+}
+
+/* Text animations (optional but nice) */
+.fancy-btn .btn-text-two {
+  display: none;
+}
+
+.fancy-btn:hover .btn-text-one {
+  display: none;
+}
+
+.fancy-btn:hover .btn-text-two {
+  display: inline;
+}
+
+
+/* ================= PLATFORM CARDS ================= */
+
+.platform-card {
+  width: 320px;
+  min-height: 220px;
+  position: relative;
+  border-radius: 2.5em;
+  padding: 2em;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Color variants */
+.platform-card.yellow {
+  background: #fff480;
+}
+
+.platform-card.green {
+  background: #b7f7d0;
+}
+
+.platform-card.purple {
+  background: #e6d6ff;
+}
+.platform-card.purple {
+  background: #e6d6ff;
+}
+.platform-card.purple {
+  background: #e6d6ff;
+}
+
+.platform-card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.platform-card .card-top,
+.platform-card .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.platform-card .card-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.platform-card .card-top p,
+.platform-card .card-bottom p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.platform-card:hover {
+  transform: scale(0.97);
+}
+
+.platform-card:hover .card-content {
+  transform: scale(0.96);
+}
+
+.platform-card:active {
+  transform: scale(0.92);
+}

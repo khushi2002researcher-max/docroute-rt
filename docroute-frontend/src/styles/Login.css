@@ -1,0 +1,185 @@
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+.login-orb-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.login-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Metallic / Glass Login Card Container */
+.card-container {
+  position: relative;
+  width: 420px; /* fits bootstrap card */
+  border-radius: 30px;
+  padding: 4px; /* space for shine border */
+  background: linear-gradient(135deg, #ffffff22, #00000022);
+  box-shadow:
+    6px 6px 12px rgba(252, 252, 252, 0.35),
+    -6px -6px 12px rgba(152, 150, 150, 0.15),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 4px hsla(0, 0%, 100%, 0.5);
+  overflow: hidden;
+}
+
+/* Shining Effect Overlay */
+.card-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgb(255, 255, 255),
+    transparent
+  );
+  background-size: 200% 200%;
+  animation: shine 3s infinite ease-in-out;
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+/* Inner Bootstrap Card */
+.card-glass {
+  position: relative;
+  z-index: 1;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(14px);
+  color: white;
+}
+
+/* Shine animation */
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Login links container */
+.login-links {
+  margin-top: 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Force theme color */
+.login-links a {
+  color: #5a83c1 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Hover */
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+/* Signup text */
+.signup-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Back to home (lower priority) */
+.link-muted {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.link-muted:hover {
+  opacity: 1;
+}
+
+
+/* Bubble Login Button */
+.bubbles {
+  --c1: #ffffff;          /* text color on hover */
+  --c2: #5a83c1;          /* main theme color */
+  --size-letter: 16px;
+
+  width: 100%;
+  padding: 0.75em 1em;
+  font-size: var(--size-letter);
+
+  background-color: transparent;
+  border: 2px solid var(--c2);
+  border-radius: 12px;
+  cursor: pointer;
+
+  overflow: hidden;
+  position: relative;
+  transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.bubbles > .text {
+  font-weight: 600;
+  color: var(--c2);
+  position: relative;
+  z-index: 1;
+  transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+/* Bubble circles */
+.bubbles::before,
+.bubbles::after {
+  content: "";
+  width: 150%;
+  aspect-ratio: 1 / 1;
+  scale: 0;
+
+  background-color: var(--c2);
+  border-radius: 50%;
+  position: absolute;
+  translate: -50% -50%;
+
+  transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.bubbles::before {
+  top: 0;
+  left: 0;
+}
+
+.bubbles::after {
+  top: 100%;
+  left: 100%;
+}
+
+.bubbles:hover > .text {
+  color: var(--c1);
+}
+
+.bubbles:hover::before,
+.bubbles:hover::after {
+  scale: 1;
+}
+
+.bubbles:active {
+  scale: 0.97;
+  filter: brightness(0.95);
+}
+
+.bubbles:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

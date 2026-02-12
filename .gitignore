@@ -1,0 +1,38 @@
+# Environment
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.envrc
+
+# Node
+node_modules/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+# Python
+env/
+venv/
+backend/env/
+backend/venv/
+__pycache__/
+*.pyc
+.env
+
+# React
+node_modules/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
