@@ -33,21 +33,28 @@ def on_startup():
 
 app.add_middleware(
     SessionMiddleware,
-    secret_key=os.getenv("SESSION_SECRET", "dev-secret"),
+    secret_key=os.getenv("SESSION_SECRET"),
     same_site="lax",
-    https_only=False,
+    https_only=True,  # Important in production
 )
+
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # change later
+    allow_origins=[
+    "https://your-vercel-app.vercel.app"]
+ # change later
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["Content-Disposition"],
 )
 
-app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+UPLOAD_DIR = os.getenv("UPLOAD_DIR", "uploads")
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+
 
 app.include_router(auth_router)
 app.include_router(ai_router)
